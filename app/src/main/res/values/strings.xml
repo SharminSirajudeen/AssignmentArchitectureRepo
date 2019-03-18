@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AssignmentArchitecture</string>
+    <string name="s_kd">KD</string>
+    <string name="not_applicable">NA</string>
+    <string name="retry">Retry</string>
+    <string name="please_check_internet_access">Please check your internet connection.</string>
+    <string name="battery_level">Battery Level</string>
+    <string name="price">Price</string>
+</resources>

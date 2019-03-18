@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply from: './dependencies.gradle'
+
+//server.properties file inside the root folder
+def apiEndpointConfigurations = rootProject.file("server.properties")
+
+// Initialize a new Properties() object called apiEndpointProperties.
+def apiEndpointProperties = new Properties()
+
+// Load the server.properties file into the apiEndpointProperties object.
+apiEndpointProperties.load(new FileInputStream(apiEndpointConfigurations))
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.assignmentarchitecture"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            useProguard = true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        jumboMode = true
+    }
+
+    //Different flavors of build
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            buildConfigField "String", "BASEURL", apiEndpointProperties['development']
+        }
+
+        prod {
+            dimension "environment"
+            buildConfigField "String", "BASEURL", apiEndpointProperties['production']
+        }
+
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def apkName = variant.flavorName.toUpperCase() + '_' + variant.versionName + '_' + variant.versionCode;
+            outputFileName = "${apkName}.apk"
+        }
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
+
+    lintOptions {
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+        checkReleaseBuilds false
+    }
+
+
+    dataBinding {
+        enabled = true
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.google.com' }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
