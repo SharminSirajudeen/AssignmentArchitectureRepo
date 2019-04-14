@@ -8,7 +8,7 @@
 
         <variable
                 name="viewModel"
-                type="com.example.assignmentarchitecture.ui.activities.mainactivity.MainActivityViewModel">
+                type="com.example.assignmentarchitecture.presentation.activities.mainactivity.MainActivityViewModel">
 
         </variable>
     </data>
@@ -22,7 +22,7 @@
         <fragment android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:id="@+id/map"
-                  tools:context=".ui.MapsActivity"
+                  tools:context=".presentation.MapsActivity"
                   android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
         <ProgressBar

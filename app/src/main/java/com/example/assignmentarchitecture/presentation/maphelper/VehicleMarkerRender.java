@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.ui.maphelper;
+package com.example.assignmentarchitecture.presentation.maphelper;
 
 import android.content.Context;
 import android.util.Log;

@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.ui.common
+package com.example.assignmentarchitecture.presentation.common
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider

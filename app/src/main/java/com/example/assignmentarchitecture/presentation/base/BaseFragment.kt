@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.ui.base
+package com.example.assignmentarchitecture.presentation.base
 
 import android.content.Context
 import android.databinding.DataBindingUtil

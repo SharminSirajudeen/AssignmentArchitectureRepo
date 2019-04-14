@@ -1,10 +1,10 @@
-package com.example.assignmentarchitecture.ui.activities.mainactivity;
+package com.example.assignmentarchitecture.presentation.activities.mainactivity;
 
 import android.support.v4.app.Fragment;
 import com.example.assignmentarchitecture.framework.AppDataManager;
 import com.example.assignmentarchitecture.domain.VehicleModel;
 import com.example.assignmentarchitecture.usecase.VehicleUseCase;
-import com.example.assignmentarchitecture.ui.base.BaseViewModels;
+import com.example.assignmentarchitecture.presentation.base.BaseViewModels;
 import com.google.android.gms.maps.model.LatLng;
 import org.junit.Assert;
 import org.junit.Before;

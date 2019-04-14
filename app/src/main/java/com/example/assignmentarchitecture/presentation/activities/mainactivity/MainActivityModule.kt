@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.ui.activities.mainactivity
+package com.example.assignmentarchitecture.presentation.activities.mainactivity
 
 import com.example.assignmentarchitecture.framework.MarkerDataManager
 import com.example.assignmentarchitecture.usecase.VehicleUseCase

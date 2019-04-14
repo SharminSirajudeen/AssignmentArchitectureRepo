@@ -31,7 +31,7 @@
                 android:value="@string/google_maps_key"/>
 
 
-        <activity android:name="com.example.assignmentarchitecture.ui.activities.splashscreen.SplashScreen">
+        <activity android:name="com.example.assignmentarchitecture.presentation.activities.splashscreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -40,7 +40,7 @@
         </activity>
 
         <activity
-                android:name=".ui.activities.mainactivity.MainActivity">
+                android:name=".presentation.activities.mainactivity.MainActivity">
         </activity>
     </application>
 

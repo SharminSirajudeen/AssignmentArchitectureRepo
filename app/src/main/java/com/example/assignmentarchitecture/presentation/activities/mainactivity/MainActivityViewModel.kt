@@ -1,11 +1,11 @@
-package com.example.assignmentarchitecture.ui.activities.mainactivity
+package com.example.assignmentarchitecture.presentation.activities.mainactivity
 
 import com.example.assignmentarchitecture.R
 import com.example.assignmentarchitecture.data.remote.Api
 import com.example.assignmentarchitecture.data.remote.GenericResponseHandler
 import com.example.assignmentarchitecture.domain.VehicleModel
 import com.example.assignmentarchitecture.usecase.VehicleUseCase
-import com.example.assignmentarchitecture.ui.base.BaseViewModels
+import com.example.assignmentarchitecture.presentation.base.BaseViewModels
 import com.example.assignmentarchitecture.utils.AppUtils
 import java.util.*
 

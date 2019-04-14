@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.ui.activities.splashscreen
+package com.example.assignmentarchitecture.presentation.activities.splashscreen
 
 import android.content.Intent
 import android.os.Build
@@ -8,7 +8,7 @@ import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.assignmentarchitecture.R
-import com.example.assignmentarchitecture.ui.activities.mainactivity.MainActivity
+import com.example.assignmentarchitecture.presentation.activities.mainactivity.MainActivity
 
 class SplashScreen : AppCompatActivity() {
     private var mDelayHandler: Handler? = null

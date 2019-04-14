@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.ui.activities.mainactivity
+package com.example.assignmentarchitecture.presentation.activities.mainactivity
 
 import android.arch.lifecycle.Observer
 import android.content.Context
@@ -12,8 +12,8 @@ import android.widget.TextView
 import com.example.assignmentarchitecture.R
 import com.example.assignmentarchitecture.databinding.ActivityMainBinding
 import com.example.assignmentarchitecture.domain.VehicleModel
-import com.example.assignmentarchitecture.ui.base.BaseActivity
-import com.example.assignmentarchitecture.ui.maphelper.VehicleMarkerRender
+import com.example.assignmentarchitecture.presentation.base.BaseActivity
+import com.example.assignmentarchitecture.presentation.maphelper.VehicleMarkerRender
 import com.example.assignmentarchitecture.utils.AppUtils
 import com.example.assignmentarchitecture.utils.StringUtils
 import com.google.android.gms.maps.CameraUpdateFactory
