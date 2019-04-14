@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import com.example.assignmentarchitecture.data.local.AppPreferencesHelper;
+import com.example.assignmentarchitecture.data.local.PreferencesImpl;
 
 import java.util.Locale;
 
@@ -40,14 +40,14 @@ public class LocaleHelper {
 
     private static String getPersistedData(Context context, String defaultLanguage) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getString(AppPreferencesHelper.Companion.getIS_LANGUAGE_SELECTED(), defaultLanguage);
+        return preferences.getString(PreferencesImpl.Companion.getIS_LANGUAGE_SELECTED(), defaultLanguage);
     }
 
     private static void persist(Context context, String language) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
 
-        editor.putString(AppPreferencesHelper.Companion.getIS_LANGUAGE_SELECTED(), language);
+        editor.putString(PreferencesImpl.Companion.getIS_LANGUAGE_SELECTED(), language);
         editor.apply();
     }
 

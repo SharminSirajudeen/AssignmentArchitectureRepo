@@ -3,20 +3,20 @@ package com.example.assignmentarchitecture.ui.activities.mainactivity
 import com.example.assignmentarchitecture.R
 import com.example.assignmentarchitecture.data.remote.Api
 import com.example.assignmentarchitecture.data.remote.GenericResponseHandler
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel
-import com.example.assignmentarchitecture.domain.repository.Vehiclerepository
+import com.example.assignmentarchitecture.domain.VehicleModel
+import com.example.assignmentarchitecture.usecase.VehicleUseCase
 import com.example.assignmentarchitecture.ui.base.BaseViewModels
 import com.example.assignmentarchitecture.utils.AppUtils
 import java.util.*
 
-class MainActivityViewModel(dataManager: Api, vehiclerepository: Vehiclerepository) :
+class MainActivityViewModel(dataManager: Api, vehicleUseCase: VehicleUseCase) :
     BaseViewModels<MainActivityNavigator>(dataManager) {
     var vehiclesApiHandler: GenericResponseHandler<WeakHashMap<String, String>, List<VehicleModel>>? = null
     var vehicleDetailsHandler: GenericResponseHandler<Int, VehicleModel>? = null
 
     init {
-        vehiclesApiHandler = vehiclerepository.allVehicles
-        vehicleDetailsHandler = vehiclerepository.vehicleDetails
+        vehiclesApiHandler = vehicleUseCase.allVehicles
+        vehicleDetailsHandler = vehicleUseCase.vehicleDetails
     }
 
     override fun retryAPICalling() {

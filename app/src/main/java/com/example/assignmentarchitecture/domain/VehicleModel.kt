@@ -1,4 +1,4 @@
-package com.example.assignmentarchitecture.domain.model.vehicles
+package com.example.assignmentarchitecture.domain
 
 import com.google.android.gms.maps.model.LatLng
 import com.google.gson.annotations.Expose

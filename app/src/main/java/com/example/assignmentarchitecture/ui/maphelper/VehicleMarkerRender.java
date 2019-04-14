@@ -2,7 +2,7 @@ package com.example.assignmentarchitecture.ui.maphelper;
 
 import android.content.Context;
 import android.util.Log;
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel;
+import com.example.assignmentarchitecture.domain.VehicleModel;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;

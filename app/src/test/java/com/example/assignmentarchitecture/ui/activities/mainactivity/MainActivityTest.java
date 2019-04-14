@@ -1,30 +1,11 @@
 package com.example.assignmentarchitecture.ui.activities.mainactivity;
 
-import android.app.ProgressDialog;
-import android.arch.lifecycle.LifecycleRegistry;
-import android.arch.lifecycle.ViewModelStore;
-import android.content.res.Resources;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentController;
-import android.support.v4.app.SupportActivity;
-import android.support.v4.util.SimpleArrayMap;
-import android.support.v4.util.SparseArrayCompat;
-import android.support.v7.app.AppCompatDelegate;
-import android.view.MotionEvent;
-import android.view.View;
-import com.example.assignmentarchitecture.data.AppDataManager;
-import com.example.assignmentarchitecture.databinding.ActivityMainBinding;
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel;
-import com.example.assignmentarchitecture.domain.repository.Vehiclerepository;
+import com.example.assignmentarchitecture.framework.AppDataManager;
+import com.example.assignmentarchitecture.domain.VehicleModel;
+import com.example.assignmentarchitecture.usecase.VehicleUseCase;
 import com.example.assignmentarchitecture.ui.base.BaseViewModels;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.maps.android.clustering.Cluster;
-import com.google.maps.android.clustering.ClusterManager;
-import kotlin.Pair;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,9 +14,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.WeakHashMap;
 
 public class MainActivityTest {
     @InjectMocks
@@ -51,7 +29,7 @@ public class MainActivityTest {
 
     @Test
     public void testSetViewModel() throws Exception {
-        mainActivity.setViewModel(new MainActivityViewModel(new AppDataManager(null, null, null), new Vehiclerepository(new AppDataManager(null, null, null))));
+        mainActivity.setViewModel(new MainActivityViewModel(new AppDataManager(null, null, null), new VehicleUseCase(new AppDataManager(null, null, null))));
     }
 
 

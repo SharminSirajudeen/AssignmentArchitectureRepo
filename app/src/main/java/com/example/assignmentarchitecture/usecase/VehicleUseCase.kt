@@ -1,17 +1,17 @@
-package com.example.assignmentarchitecture.domain.repository
+package com.example.assignmentarchitecture.usecase
 
 import android.arch.lifecycle.MutableLiveData
 import com.example.assignmentarchitecture.data.remote.Api
 import com.example.assignmentarchitecture.data.remote.GenericResponseHandler
 import com.example.assignmentarchitecture.data.remote.NotOkException
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel
+import com.example.assignmentarchitecture.domain.VehicleModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 import javax.inject.Inject
 
-class Vehiclerepository @Inject
+class VehicleUseCase @Inject
 constructor(private val api: Api) {
 
     val allVehicles: GenericResponseHandler<WeakHashMap<String, String>, List<VehicleModel>>

@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.TextView
 import com.example.assignmentarchitecture.R
 import com.example.assignmentarchitecture.databinding.ActivityMainBinding
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel
+import com.example.assignmentarchitecture.domain.VehicleModel
 import com.example.assignmentarchitecture.ui.base.BaseActivity
 import com.example.assignmentarchitecture.ui.maphelper.VehicleMarkerRender
 import com.example.assignmentarchitecture.utils.AppUtils

@@ -7,10 +7,10 @@ import com.google.gson.Gson
 
 import javax.inject.Inject
 
-class AppPreferencesHelper @Inject
+class PreferencesImpl @Inject
 constructor(
     context: Context, @PreferenceInfo prefFileName: String, private val gson: Gson
-) : PreferencesHelper {
+) : IPreferences {
     override var isLanguageSelected: Boolean
         get() = mPrefs.getBoolean(IS_LANGUAGE_SELECTED, true)
         set(value) {}

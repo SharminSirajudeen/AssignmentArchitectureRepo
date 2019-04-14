@@ -1,7 +1,7 @@
 package com.example.assignmentarchitecture.data.local
 
 
-interface PreferencesHelper {
+interface IPreferences {
 
     //language selection
     var isLanguageSelected: Boolean

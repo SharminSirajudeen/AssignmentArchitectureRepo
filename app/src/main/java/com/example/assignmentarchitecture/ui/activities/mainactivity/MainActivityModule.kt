@@ -1,7 +1,7 @@
 package com.example.assignmentarchitecture.ui.activities.mainactivity
 
-import com.example.assignmentarchitecture.data.MarkerDataManager
-import com.example.assignmentarchitecture.domain.repository.Vehiclerepository
+import com.example.assignmentarchitecture.framework.MarkerDataManager
+import com.example.assignmentarchitecture.usecase.VehicleUseCase
 import dagger.Module
 import dagger.Provides
 
@@ -11,9 +11,9 @@ class MainActivityModule {
     @Provides
     fun provideMainActivityViewModel(
         dataManager: MarkerDataManager,
-        vehiclerepository: Vehiclerepository
+        vehicleUseCase: VehicleUseCase
     ): MainActivityViewModel {
-        return MainActivityViewModel(dataManager, vehiclerepository)
+        return MainActivityViewModel(dataManager, vehicleUseCase)
     }
 
 }

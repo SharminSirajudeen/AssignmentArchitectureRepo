@@ -1,9 +1,9 @@
-package com.example.assignmentarchitecture.data;
+package com.example.assignmentarchitecture.framework;
 
 import android.content.Context;
-import com.example.assignmentarchitecture.data.local.PreferencesHelper;
+import com.example.assignmentarchitecture.data.local.IPreferences;
 import com.example.assignmentarchitecture.data.remote.Api;
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel;
+import com.example.assignmentarchitecture.domain.VehicleModel;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -15,18 +15,18 @@ import java.util.List;
 public class AppDataManager implements MarkerDataManager {
     private final Api mApi;
     private final Context mContext;
-    private final PreferencesHelper mPreferencesHelper;
+    private final IPreferences mIPreferences;
 
     @Inject
-    public AppDataManager(Context context, Api api, PreferencesHelper preferencesHelper) {
+    public AppDataManager(Context context, Api api, IPreferences iPreferences) {
         mContext = context;
         mApi = api;
-        mPreferencesHelper = preferencesHelper;
+        mIPreferences = iPreferences;
     }
 
     @Override
     public void clearAllPref() {
-        mPreferencesHelper.clearAllPref();
+        mIPreferences.clearAllPref();
     }
 
     @NotNull
@@ -43,11 +43,11 @@ public class AppDataManager implements MarkerDataManager {
 
     @Override
     public boolean isLanguageSelected() {
-        return mPreferencesHelper.isLanguageSelected();
+        return mIPreferences.isLanguageSelected();
     }
 
     @Override
     public void setLanguageSelected(boolean isLanguageSelected) {
-        mPreferencesHelper.setLanguageSelected(isLanguageSelected);
+        mIPreferences.setLanguageSelected(isLanguageSelected);
     }
 }

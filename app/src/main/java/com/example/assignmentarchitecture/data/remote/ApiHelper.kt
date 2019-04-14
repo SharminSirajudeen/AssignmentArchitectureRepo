@@ -1,6 +1,6 @@
 package com.example.assignmentarchitecture.data.remote
 
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel
+import com.example.assignmentarchitecture.domain.VehicleModel
 import retrofit2.Call
 import javax.inject.Inject
 import javax.inject.Singleton

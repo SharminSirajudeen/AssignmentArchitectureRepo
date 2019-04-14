@@ -1,8 +1,8 @@
-package com.example.assignmentarchitecture.domain.repository;
+package com.example.assignmentarchitecture.usecase;
 
 import com.example.assignmentarchitecture.data.remote.Api;
 import com.example.assignmentarchitecture.data.remote.GenericResponseHandler;
-import com.example.assignmentarchitecture.domain.model.vehicles.VehicleModel;
+import com.example.assignmentarchitecture.domain.VehicleModel;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,13 +13,11 @@ import org.mockito.MockitoAnnotations;
 import java.util.List;
 import java.util.WeakHashMap;
 
-import static org.mockito.Mockito.*;
-
-public class VehiclerepositoryTest {
+public class VehicleUseCaseTest {
     @Mock
     Api api;
     @InjectMocks
-    Vehiclerepository vehiclerepository;
+    VehicleUseCase vehicleUseCase;
 
     @Before
     public void setUp() {
@@ -28,13 +26,13 @@ public class VehiclerepositoryTest {
 
     @Test
     public void testGetAllVehicles() throws Exception {
-        GenericResponseHandler<WeakHashMap<String, String>, List<VehicleModel>> result = vehiclerepository.getAllVehicles();
+        GenericResponseHandler<WeakHashMap<String, String>, List<VehicleModel>> result = vehicleUseCase.getAllVehicles();
         Assert.assertNotEquals(null, result);
     }
 
     @Test
     public void testGetVehicleDetails() throws Exception {
-        GenericResponseHandler<Integer, VehicleModel> result = vehiclerepository.getVehicleDetails();
+        GenericResponseHandler<Integer, VehicleModel> result = vehicleUseCase.getVehicleDetails();
         Assert.assertNull(null, result);
     }
 }

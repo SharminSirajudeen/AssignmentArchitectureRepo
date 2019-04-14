@@ -2,10 +2,10 @@ package com.example.assignmentarchitecture.di.modules
 
 import android.content.Context
 import com.example.assignmentarchitecture.App
-import com.example.assignmentarchitecture.data.AppDataManager
-import com.example.assignmentarchitecture.data.MarkerDataManager
-import com.example.assignmentarchitecture.data.local.AppPreferencesHelper
-import com.example.assignmentarchitecture.data.local.PreferencesHelper
+import com.example.assignmentarchitecture.framework.AppDataManager
+import com.example.assignmentarchitecture.framework.MarkerDataManager
+import com.example.assignmentarchitecture.data.local.PreferencesImpl
+import com.example.assignmentarchitecture.data.local.IPreferences
 import com.example.assignmentarchitecture.data.remote.Api
 import com.example.assignmentarchitecture.di.PreferenceInfo
 import com.google.gson.FieldNamingPolicy
@@ -42,8 +42,8 @@ class AppModule {
 
     @Provides
     @Singleton
-    internal fun providePreferencesHelper(appPreferencesHelper: AppPreferencesHelper): PreferencesHelper {
-        return appPreferencesHelper
+    internal fun provideIPreferences(preferencesImpl: PreferencesImpl): IPreferences {
+        return preferencesImpl
     }
 
     @Provides
